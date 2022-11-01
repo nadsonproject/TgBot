@@ -4,15 +4,12 @@ const fetch = require('node-fetch');
 //import fetch from 'node-fetch'
 const { telegram_bot_token, yandex_token } = require('./token.js')
 
-// replace the value below with the Telegram token you receive from @BotFather
-//const telegram_bot_token = '5452918890:AAFz6l5Ky9xGwXzjHJmMg8FlnNJwFYDynXc';
 
-//const yandex_token = '5c24c72b-fa58-4845-a2dc-0e959422017f'
+
 
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(telegram_bot_token, { polling: true });
 
-let ChatId = [448960021, 1508126065]; 
 
 
 function getRandomInt(max) {
