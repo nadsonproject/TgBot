@@ -52,7 +52,7 @@ const button_object2 = {
 
 //let Terebonk_stickers = `https://tlgrm.ru/_/stickers/e65/38d/e6538d88-ed55-39d9-a67f-ad97feea9c01/192/.webp`
 
-//��������� ��� �� �����
+
 const chat = () => {
     bot.on('message', async (msg) => {
         console.log(msg)
