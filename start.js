@@ -2,7 +2,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const fetch = require('node-fetch');
 const { telegram_bot_token, yandex_token, ChatId } = require('./token.js')
 const { makeid, getRandomInt } = require('./generate')
-const { button_object, button_object2 } = require('./ButtonsAndCommands')
+const { button_object, button_object2 } = require('./buttons')
 
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(telegram_bot_token, { polling: true });
