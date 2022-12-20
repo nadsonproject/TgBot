@@ -40,7 +40,6 @@ const chat = () => {
 
     bot.on('callback_query', async (data) => {
         if (data.data == 'sticker') {
-            //console.log(typeof (data.data))
             let stickers_num = getRandomInt(74);
             for (let i = 0; i < ChatId.length; i++) {
                 await bot.sendSticker(ChatId[i], `https://tlgrm.ru/_/stickers/e65/38d/e6538d88-ed55-39d9-a67f-ad97feea9c01/192/${stickers_num}.webp`, button_object)
@@ -48,7 +47,6 @@ const chat = () => {
         }
 
         if (data.data == 'audio') {
-            //console.log(data.data)
             let voice_num = getRandomInt(7);
             for (let i = 0; i < ChatId.length; i++) {
                 await bot.sendVoice(ChatId[i], `./voice/${voice_num}.mp3`, button_object)
@@ -56,7 +54,6 @@ const chat = () => {
         }
 
         if (data.data == 'gif') {
-            //console.log(data.data)
             let voice_num = makeid(4);
             for (let i = 0; i < ChatId.length; i++) {
                 await bot.sendAnimation(ChatId[i], `https://i.gifer.com/${voice_num}.gif`, button_object)
@@ -64,7 +61,6 @@ const chat = () => {
         }
 
         if (data.data == 'location') {
-            //console.log(data.data)
             data.data = 'nothing'
             console.log(data.data)
             await get_location()
@@ -80,7 +76,6 @@ const get_location = async () => {
         bot.on('message', async (msg) => {
             async function get_coord(text) {
                 var arr = text.split(' ')
-                //console.log(arr)
                 bot.sendLocation(ChatId[i], Number(arr[0]), Number(arr[1]))
                 bot.off('message')
                 bot.off('callback_query')
