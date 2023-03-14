@@ -42,28 +42,36 @@ const chat = () => {
         if (data.data == 'sticker') {
             let stickers_num = getRandomInt(74);
             for (let i = 0; i < ChatId.length; i++) {
-                await bot.sendSticker(ChatId[i], `https://tlgrm.ru/_/stickers/e65/38d/e6538d88-ed55-39d9-a67f-ad97feea9c01/192/${stickers_num}.webp`, button_object)
+                bot.sendSticker(ChatId[i], `https://tlgrm.ru/_/stickers/e65/38d/e6538d88-ed55-39d9-a67f-ad97feea9c01/192/${stickers_num}.webp`, button_object)
+                    .then(data => console.log(data))
+                    .catch(err => console.log(err))
             }
         }
 
         if (data.data == 'audio') {
             let voice_num = getRandomInt(7);
             for (let i = 0; i < ChatId.length; i++) {
-                await bot.sendVoice(ChatId[i], `./voice/${voice_num}.mp3`, button_object)
+                bot.sendVoice(ChatId[i], `./voice/${voice_num}.mp3`, button_object)
+                    .then(data => console.log(data))
+                    .catch(err => console.log(err))
             }
         }
 
         if (data.data == 'gif') {
             let voice_num = makeid(4);
             for (let i = 0; i < ChatId.length; i++) {
-                await bot.sendAnimation(ChatId[i], `https://i.gifer.com/${voice_num}.gif`, button_object)
+                bot.sendAnimation(ChatId[i], `https://i.gifer.com/${voice_num}.gif`, button_object)
+                    .then(data => console.log(data))
+                    .catch(err => console.log(err))
             }
         }
 
         if (data.data == 'location') {
             data.data = 'nothing'
             console.log(data.data)
-            await get_location()
+            get_location()
+                .then(data => console.log(data))
+                .catch(err => console.log(err))
         }
     })
 }
@@ -79,9 +87,13 @@ const get_location = async () => {
                 bot.sendLocation(ChatId[i], Number(arr[0]), Number(arr[1]))
                 bot.off('message')
                 bot.off('callback_query')
-                await chat()
-           }
-           get_coord(msg.text)
+                chat()
+                    .then(data => console.log(data))
+                    .catch(err => console.log(err))
+            }
+            get_coord(msg.text)
+                .then(data => console.log(data))
+                .catch(err => console.log(err))
         })
     }
 }

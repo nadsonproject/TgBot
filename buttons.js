@@ -17,4 +17,4 @@ const button_object2 = {
     })
 }
 
-module.exports = {button_object, button_object2}
+module.exports = { button_object, button_object2 }

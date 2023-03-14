@@ -12,4 +12,4 @@ function makeid(length) {
     return result;
 }
 
-module.exports = {getRandomInt, makeid}
+module.exports = { getRandomInt, makeid }
